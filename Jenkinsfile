@@ -35,7 +35,9 @@ pipeline {
             echo '构建完成，正在清理工作空间'
             cleanWs();
             echo '清理工作空间完成'
-            sh label: '', script: 'docker images'
+            sh label: '', script: '''#!/bin/bash -ilex
+
+docker images'''
         }
         failure {
             // 构建失败，这里使用sh是因为echo不支持使用参数
