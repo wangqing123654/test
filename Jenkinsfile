@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-               sh label: '', script: '''#!/bin/sh -l
+               sh label: '', script: '''#!/bin/bash -il
 sudo docker images'''
             }
         }
