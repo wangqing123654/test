@@ -25,12 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                 sh 'sudo docker run \
-  -u root \
-  --rm \
-  -p 8081:8081 \
-  --name test111 \
-  hellxz/example'
+                sh label: '', script: 'sudo docker images' 
             }
         }
     }
