@@ -11,7 +11,7 @@ pipeline {
                 //清理工作空间
                 cleanWs();
                 //拉取代码
-                checkout([$class: 'GitSCM', branches: [[name: '*/docker-maven-plugin-2']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'demo']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/hellxz/SpringBoot-DockerDemo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/docker-maven-plugin-2']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'demo']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/wangqing123654/SpringBoot-DockerDemo.git']]])
             }
         }
         stage('Build') { 
