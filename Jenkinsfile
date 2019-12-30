@@ -35,7 +35,7 @@ pipeline {
             echo '构建完成，正在清理工作空间'
             cleanWs();
             echo '清理工作空间完成'
-            sh label: '', script: '''#!/bin/bash -ilex
+            sh label: '', script: '''/usr/bin/docker
 
 docker images'''
         }
