@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                 sh -c 'sudo docker run \
+                 sh 'sudo docker run \
   -u root \
   --rm \
   -p 8081:8081 \
