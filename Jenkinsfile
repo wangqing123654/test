@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-               sh 'mvn --version'
+               sh './111.sh'
             }
         }
     }
