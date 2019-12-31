@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-               sh 'docker images'
+               sh 'mvn --version'
             }
         }
     }
