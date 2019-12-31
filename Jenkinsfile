@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-               sh './111.sh'
+               sh '111.sh'
             }
         }
     }
