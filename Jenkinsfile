@@ -25,7 +25,8 @@ pipeline {
         }
         stage('Run') { 
             steps {
-               sh '111.sh'
+              sh label: '', script: '''#!/usr/bin/env bash
+echo \'The following Maven command installs your Maven-built Java application\''''
             }
         }
     }
