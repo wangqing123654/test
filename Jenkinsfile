@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                echo '111111111111111'
+                docker images
             }
         }
     }
