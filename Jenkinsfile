@@ -1,12 +1,8 @@
 pipeline {
-    agent { //这里使用docker镜像来启动maven,这样有个好处就是多个工程同时构建时不会出现冲突而失败
-        docker {
-            image 'maven:3.6-alpine' 
-            args '-u root -v /home/jenkins/mvnrepo:/root/.m2'  //持载到本地，减少重复下载量，使用ali源
-        }
-    }
+    agent none
     stages {
         stage('Pull Git Demo') {
+            agent any
             steps{
                 //清理工作空间
                 cleanWs();
@@ -15,6 +11,12 @@ pipeline {
             }
         }
         stage('Build') { 
+            agent { //这里使用docker镜像来启动maven,这样有个好处就是多个工程同时构建时不会出现冲突而失败
+        docker {
+            image 'maven:3.6-alpine' 
+            args '-u root -v /home/jenkins/mvnrepo:/root/.m2'  //持载到本地，减少重复下载量，使用ali源
+        }
+    }
             steps {
                 dir('demo') { //切换目录到demo
                     //执行构建镜像命令，这里起作用的是maven的插件
@@ -24,6 +26,7 @@ pipeline {
             }
         }
         stage('Run') { 
+            agent any
             steps {
              sh label: '', script: 'docker images'
             }
