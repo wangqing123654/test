@@ -23,12 +23,6 @@ pipeline {
                 }
             }
         }
-        stage('Run') { 
-            agent any
-            steps {
-             sh label: '', script: 'docker images'
-            }
-        }
     }
     post { //这里定义的是后置处理
         success {
