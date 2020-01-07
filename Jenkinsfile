@@ -33,7 +33,6 @@ pipeline {
         }
     }
     post { //这里定义的是后置处理
-        agent any
         success {
             // 构建成功
             echo '构建完成，正在清理工作空间'
